@@ -4,4 +4,8 @@ RUN yum install -y nginx php php-fpm php-enchant php-IDNA_Convert php-mbstring p
 
 COPY ./src/wordpress /srv/wordpress
 COPY ./conf/wp-config.php /srv/wordpress/wp-config.php
+COPY ./conf/nginx.conf /etc/nginx/conf.d/default.conf
+COPY ./conf/php-fpm.conf /etc/php-fpm.d/wordpress.conf
+
+RUN mv /etc/php-fpm.d/www.conf /etc/php-fpm.d/www.disabled
 
