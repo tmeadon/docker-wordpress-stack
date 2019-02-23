@@ -9,3 +9,5 @@ COPY ./conf/php-fpm.conf /etc/php-fpm.d/wordpress.conf
 
 RUN mv /etc/php-fpm.d/www.conf /etc/php-fpm.d/www.disabled
 
+RUN groupadd wordpress
+RUN useradd -b /srv/wordpress -g wordpress wordpress
