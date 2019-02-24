@@ -4,7 +4,7 @@ services:
     image: web:latest
     deploy:
       replicas: 5
-      resouces:
+      resources:
         limits:
           cpus: 0.1
           mem: 50M
