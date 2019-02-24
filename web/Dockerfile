@@ -14,9 +14,10 @@ COPY ./conf/php-fpm.conf /etc/php-fpm.d/wordpress.conf
 # Disable the php-fpm default pool
 RUN mv /etc/php-fpm.d/www.conf /etc/php-fpm.d/www.disabled
 
-# Create user/group for wordpress
+# Create user/group for wordpress and make owner of wordpress directory
 RUN groupadd wordpress
 RUN useradd -b /srv/wordpress -g wordpress wordpress
+RUN chown -R wordpress:wordpress /srv/wordpress
 
 # Copy in startup script and set permissions
 COPY ./run.sh /root/run.sh
