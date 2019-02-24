@@ -1,0 +1,20 @@
+version: 3
+services:
+  web:
+    image: web:latest
+    deploy:
+      replicas: 5
+      resouces:
+        limits:
+          cpus: 0.1
+          mem: 50M
+      restart-policy:
+        condition: on-failure
+    ports:
+      - "8080:80"
+    networks:
+      - web
+
+networks:
+  web:
+
