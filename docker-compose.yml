@@ -6,7 +6,7 @@ services:
       replicas: 5
       resources:
         limits:
-          cpus: 0.1
+          cpus: "0.1"
           mem: 50M
       restart-policy:
         condition: on-failure
