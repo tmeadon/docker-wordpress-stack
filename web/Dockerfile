@@ -16,6 +16,8 @@ RUN useradd -b /srv/wordpress -g wordpress wordpress
 
 COPY ./run.sh /root/run.sh
 
+RUN chmod +x /root/run.sh
+
 EXPOSE 80
 
 CMD [ "/root/run.sh" ]
