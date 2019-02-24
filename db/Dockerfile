@@ -2,6 +2,5 @@
 FROM mysql/mysql-server
 
 RUN mkdir /usr/sql
-COPY /data/wordpress.bak /usr/sql/wordpress.bak
+COPY /data/wordpress.sql /docker-entrypoint-initdb.d
 
-ENV MYSQL_ROOT_PASSWORD=root
